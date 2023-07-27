@@ -1,0 +1,60 @@
+.details {
+    background-color: #272C34;
+    height: 100vh;
+    width: 100%;
+}
+
+.details__header {
+    /* height: 200px; */
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.details__basicInfo {
+    height: 100%;
+}
+
+
+
+.details__rating--container svg path{
+    fill: #F5C518 !important;
+}
+
+.details__rating--container {
+    display: flex;
+    align-items: center;
+}
+
+.details__rating--wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .details-header{
+   
+    position: relative
+
+}
+.details-imdb{
+    
+    text-align: right;
+    position:absolute;
+    top: 8px;
+    right: 20px;
+}
+.details-rating{
+    text-align: right;
+    position:relative;
+    float: right;
+    margin-left: 10px;
+    justify-content: space-between;
+    top: 20px;
+    right: 20px;
+
+}
+.details-date{
+    position:absolute;
+
+} */

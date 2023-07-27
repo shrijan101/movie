@@ -1,0 +1,71 @@
+
+
+html{
+  box-sizing: border-box;
+  font-family: "Roboto","san serif";
+}
+
+.app {
+  background-color: #272c34;
+}
+
+.font-tiny--muted {
+  font-weight: 400;
+  color: #636467;
+  font-size: 14px;
+}
+
+.font-small--muted {
+  font-weight: 300;
+  color: #636467;
+  font-size: 15px;
+}
+
+.font-small--mutedBold {
+  font-weight: 600;
+  color: #636467;
+  font-size: 15px;
+}
+
+.font-small {
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 15px;
+}
+
+.font-tiny {
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.font-large{
+  font-weight:300;
+  color:#fff;
+  font-size: 20px;
+}
+
+.font-largest{
+  font-weight:300;
+  color:#fff;
+  font-size: 26px;
+}
+
+.font-largest--bold{
+  font-weight:600;
+  color:#fff;
+  font-size: 26px;
+}
+
+
+.link-tiny {
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all .3s ease-in;
+}
+
+.link-tiny:hover {
+  color: #01b4e4;
+}
