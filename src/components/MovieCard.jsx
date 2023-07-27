@@ -12,7 +12,7 @@ function MovieCard(props) {
 
   //   setModalOpen(true);
   // }
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 
   const fetchImdbData = async (listGenre,dataId)=>{
