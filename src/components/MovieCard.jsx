@@ -3,9 +3,11 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function MovieCard(props) {
+  
   const [genreArr, setGenreArr] = useState(null);
   const [tubeData, setTubeData]=useState([]);
   const [imdbData, setImdbData]=useState([]);
+  const { dataId, movieImg, rating, movieName } = props;
   // const [modalOpen, setModalOpen] = useState([]);
 
   // const openModal = ()=>{
@@ -57,40 +59,44 @@ function MovieCard(props) {
   },[props.genreData, props.gernreIds,props.dataId,props.type,props.imdbId])
   
 
+  const handleWatchTrailer = (tubeData) => {
+    // Assuming tubeData is the YouTube video ID (e.g., 'abc123')
+    const youtubeUrl = `https://www.youtube.com/watch?v=${tubeData}`;
+
+    // Open the YouTube link in a new tab/window
+    window.open(youtubeUrl, '_blank');
+  };
 
 
-  return ( 
-  <Link to={`/details/${props.dataId}`} className='text-decoration'>
-    <div className="movie__card">
-     {/* <a href={`https://www.imdb.com/title/${imdbData}`}target='none'>  */}
-     <div className="movie__card--imgWrapper" onClick={ImdbClickHandler}>
-        <img src={`https://image.tmdb.org/t/p/w500/${props.movieImg}`} alt="poster_path" className="movie__card--img" />
-        <span className="font-large">IMDB</span>
-     </div>
-    {/* </a> */}
-      <div className="movie__card--content">
-        <p>
-          <span className="font-largest">{props.rating.toFixed(1)}</span>
-          <span className="font-small--muted">/10</span>
-        </p>
-        <div className="movie__card--title mt-sm mb-sm">
-          <span className="font-large mr-sm">{props.movieName}</span>
-          <span className="font-tiny--muted">
-            {
-              genreArr?.length ? genreArr.join(" ● ") : ""
-              // //['comedy', 'tiuytt']
-              // genreArr.map((shrijan) => (
-                //   shrijan
-                // ))
-              }
-          </span>
+
+    return (
+      <Link to={`/details/${dataId}`} className='text-decoration'>
+        <div className="movie__card">
+          <div className="movie__card--imgWrapper" onClick={ImdbClickHandler}>
+            <img src={`https://image.tmdb.org/t/p/w500/${movieImg}`} alt="poster_path" className="movie__card--img" />
+            <span className="font-large">IMDB</span>
+          </div>
+  
+          <div className="movie__card--content">
+            <p>
+              <span className="font-largest">{rating.toFixed(1)}</span>
+              <span className="font-small--muted">/10</span>
+            </p>
+            <div className="movie__card--title mt-sm mb-sm">
+              <span className="font-large mr-sm">{movieName}</span>
+              <span className="font-tiny--muted">
+                {genreArr?.join(" ● ") || ""}
+              </span>
+            </div>
+            <p className="font-small--muted mb-tn">Playing on: Netflix</p>
+            {console.log("I'm here")}
+            <button onClick={(e) => { e.preventDefault(); handleWatchTrailer(tubeData); }} className="pretty-button">Watch Trailer</button>
+          </div>
         </div>
-          <p className="font-small--muted mb-tn">Playin on: Netflix</p>
-           <a href={`https://www.youtube.com/watch?v=${tubeData}`} target='none' className="link-tiny">Watch Trailer</a>
-      </div>
-    </div>
-    </Link>
-  )
-}
+      </Link>
+);
+};
 
-export default MovieCard
+  
+
+export default MovieCard;
